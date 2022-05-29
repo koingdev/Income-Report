@@ -31,10 +31,11 @@ struct ReportView: View {
             
             HStack {
                 Text("សរុប")
-                    .font(.largeTitle.bold())
+                    .font(.largeTitle)
+                    .foregroundColor(.secondary)
                     .padding()
                 Spacer()
-                Text("\(total, specifier: "%.2f")")
+                Text("\(total, specifier: "%.2f")$")
                     .font(.largeTitle.bold())
                     .padding()
                 

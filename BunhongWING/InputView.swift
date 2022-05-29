@@ -14,7 +14,7 @@ struct InputView: View {
     private var incomeValue: Double { Double(income) ?? 0 }
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 20) {
             HStack {
                 Text("ចំនេញ")
                 TextField("$", text: $income)
