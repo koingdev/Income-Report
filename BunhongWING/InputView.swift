@@ -10,6 +10,7 @@ import SwiftUI
 struct InputView: View {
     @State private var income: String = ""
     @State private var date = Date()
+    @State private var showingAlert = false
     
     private var incomeValue: Double { Double(income) ?? 0 }
     
@@ -31,6 +32,8 @@ struct InputView: View {
             
             Button(action: {
                 hideKeyboard()
+                // validate
+                guard incomeValue > 0 else { showingAlert = true; return }
                 // add to db
                 IncomeModel(income: incomeValue, date: date).add()
                 // reset
@@ -39,6 +42,9 @@ struct InputView: View {
                 Text("បញ្ចូល")
                     .frame(maxWidth: .infinity)
             })
+            .alert("សូមបញ្ចូលទិន្ន័យឲ្យបានត្រឹមត្រូវ។", isPresented: $showingAlert) {
+                Button("OK", role: .cancel) { }
+            }
             .buttonStyle(.bordered)
             .tint(.green)
             .controlSize(.large)
