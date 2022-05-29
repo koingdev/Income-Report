@@ -11,7 +11,7 @@ struct InputView: View {
     @State private var income: String = ""
     @State private var date = Date()
     
-    var incomeValue: Double { Double(income) ?? 0 }
+    private var incomeValue: Double { Double(income) ?? 0 }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -23,8 +23,7 @@ struct InputView: View {
             }.padding()
             
             DatePicker("📅", selection: $date, displayedComponents: .date)
-                .datePickerStyle(.wheel)
-                .environment(\.locale, Locale(identifier: "khm"))
+                .environment(\.locale, .khm)
                 .padding()
                 .onTapGesture {
                     hideKeyboard()
@@ -32,8 +31,10 @@ struct InputView: View {
             
             Button(action: {
                 hideKeyboard()
+                // add to db
+                IncomeModel(income: incomeValue, date: date).add()
+                // reset
                 income = ""
-                date = Date()
             }, label: {
                 Text("បញ្ចូល")
                     .frame(maxWidth: .infinity)
