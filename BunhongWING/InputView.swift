@@ -8,18 +8,32 @@
 import SwiftUI
 
 struct InputView: View {
-    @State private var income: String = ""
+    @State private var rielIncome: String = ""
+    @State private var usdIncome: String = ""
     @State private var date = Date()
     @State private var showingAlert = false
     
-    private var incomeValue: Double { Double(income) ?? 0 }
+    private var rielValue: Double { Double(rielIncome) ?? 0 }
+    private var usdValue: Double { Double(usdIncome) ?? 0 }
+    
+    private var isValid: Bool {
+        if rielValue <= 0 && usdValue <= 0 { return false }
+        return true
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
-                Text("ចំនេញ")
-                TextField("$", text: $income)
-                    .keyboardType(.numberPad)
+                Text("រៀល")
+                TextField("៛", text: $rielIncome)
+                    .keyboardType(.decimalPad)
+                    .textFieldStyle(.roundedBorder)
+            }.padding()
+            
+            HStack {
+                Text("ដុល្លារ")
+                TextField("$", text: $usdIncome)
+                    .keyboardType(.decimalPad)
                     .textFieldStyle(.roundedBorder)
             }.padding()
             
@@ -33,11 +47,12 @@ struct InputView: View {
             Button(action: {
                 hideKeyboard()
                 // validate
-                guard incomeValue > 0 else { showingAlert = true; return }
+                guard isValid else { showingAlert = true; return }
                 // add to db
-                IncomeModel(income: incomeValue, date: date).add()
+                IncomeModel(rielIncome: rielValue, usdIncome: usdValue, date: date).add()
                 // reset
-                income = ""
+                rielIncome = ""
+                usdIncome = ""
             }, label: {
                 Text("បញ្ចូល")
                     .frame(maxWidth: .infinity)

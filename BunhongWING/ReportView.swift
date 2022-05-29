@@ -10,7 +10,8 @@ import SwiftUI
 struct ReportView: View {
     @State private var startDate = Date()
     @State private var endDate = Date()
-    @State private var total: Double = 0
+    @State private var rielTotal: Double = 0
+    @State private var usdTotal: Double = 0
     
     var body: some View {
         VStack(spacing: 12) {
@@ -31,13 +32,18 @@ struct ReportView: View {
             
             HStack {
                 Text("សរុប")
-                    .font(.largeTitle)
+                    .font(.headline)
                     .foregroundColor(.secondary)
                     .padding()
                 Spacer()
-                Text("\(total, specifier: "%.2f")$")
-                    .font(.largeTitle.bold())
-                    .padding()
+                
+                VStack {
+                    Text("\(rielTotal, specifier: "%.2f")៛")
+                        .font(.largeTitle.bold())
+                    Text("\(usdTotal, specifier: "%.2f")$")
+                        .font(.largeTitle.bold())
+                        
+                }.padding()
                 
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -49,7 +55,10 @@ struct ReportView: View {
     }
     
     private func sumTotal() {
-        total = IncomeModel.totalIncome(from: startDate.startOfDay, to: endDate.endOfDay)
+        let start = startDate.startOfDay
+        let end = endDate.endOfDay
+        rielTotal = IncomeModel.totalRielIncome(from: start, to: end)
+        usdTotal = IncomeModel.totalUsdIncome(from: start, to: end)
     }
 }
 
