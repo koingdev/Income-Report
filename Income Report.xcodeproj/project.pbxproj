@@ -10,7 +10,7 @@
 		A277990F2843AF2B001197F7 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A277990E2843AF2B001197F7 /* Realm */; };
 		A27799112843AF2B001197F7 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A27799102843AF2B001197F7 /* RealmSwift */; };
 		A27799132843B9E8001197F7 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27799122843B9E8001197F7 /* Helper.swift */; };
-		A2DDCA9E284371FB002E8682 /* BunhongWINGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DDCA9D284371FB002E8682 /* BunhongWINGApp.swift */; };
+		A2DDCA9E284371FB002E8682 /* IncomeReportApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DDCA9D284371FB002E8682 /* IncomeReportApp.swift */; };
 		A2DDCAA0284371FB002E8682 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DDCA9F284371FB002E8682 /* ContentView.swift */; };
 		A2DDCAA2284371FD002E8682 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2DDCAA1284371FD002E8682 /* Assets.xcassets */; };
 		A2DDCAA5284371FD002E8682 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2DDCAA4284371FD002E8682 /* Preview Assets.xcassets */; };
@@ -21,8 +21,8 @@
 
 /* Begin PBXFileReference section */
 		A27799122843B9E8001197F7 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		A2DDCA9A284371FB002E8682 /* BunhongWING.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BunhongWING.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2DDCA9D284371FB002E8682 /* BunhongWINGApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BunhongWINGApp.swift; sourceTree = "<group>"; };
+		A2DDCA9A284371FB002E8682 /* Jomnol (Income).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jomnol (Income).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2DDCA9D284371FB002E8682 /* IncomeReportApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeReportApp.swift; sourceTree = "<group>"; };
 		A2DDCA9F284371FB002E8682 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A2DDCAA1284371FD002E8682 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2DDCAA4284371FD002E8682 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -47,7 +47,7 @@
 		A2DDCA91284371FB002E8682 = {
 			isa = PBXGroup;
 			children = (
-				A2DDCA9C284371FB002E8682 /* BunhongWING */,
+				A2DDCA9C284371FB002E8682 /* Income Report */,
 				A2DDCA9B284371FB002E8682 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,15 +55,15 @@
 		A2DDCA9B284371FB002E8682 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A2DDCA9A284371FB002E8682 /* BunhongWING.app */,
+				A2DDCA9A284371FB002E8682 /* Jomnol (Income).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A2DDCA9C284371FB002E8682 /* BunhongWING */ = {
+		A2DDCA9C284371FB002E8682 /* Income Report */ = {
 			isa = PBXGroup;
 			children = (
-				A2DDCA9D284371FB002E8682 /* BunhongWINGApp.swift */,
+				A2DDCA9D284371FB002E8682 /* IncomeReportApp.swift */,
 				A2DDCA9F284371FB002E8682 /* ContentView.swift */,
 				A2DDCAB028439366002E8682 /* InputView.swift */,
 				A2DDCAB2284393BF002E8682 /* ReportView.swift */,
@@ -72,7 +72,7 @@
 				A2DDCAA1284371FD002E8682 /* Assets.xcassets */,
 				A2DDCAA3284371FD002E8682 /* Preview Content */,
 			);
-			path = BunhongWING;
+			path = "Income Report";
 			sourceTree = "<group>";
 		};
 		A2DDCAA3284371FD002E8682 /* Preview Content */ = {
@@ -86,9 +86,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A2DDCA99284371FB002E8682 /* BunhongWING */ = {
+		A2DDCA99284371FB002E8682 /* Income Report */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A2DDCAA8284371FD002E8682 /* Build configuration list for PBXNativeTarget "BunhongWING" */;
+			buildConfigurationList = A2DDCAA8284371FD002E8682 /* Build configuration list for PBXNativeTarget "Income Report" */;
 			buildPhases = (
 				A2DDCA96284371FB002E8682 /* Sources */,
 				A2DDCA97284371FB002E8682 /* Frameworks */,
@@ -98,13 +98,13 @@
 			);
 			dependencies = (
 			);
-			name = BunhongWING;
+			name = "Income Report";
 			packageProductDependencies = (
 				A277990E2843AF2B001197F7 /* Realm */,
 				A27799102843AF2B001197F7 /* RealmSwift */,
 			);
 			productName = BunhongWING;
-			productReference = A2DDCA9A284371FB002E8682 /* BunhongWING.app */;
+			productReference = A2DDCA9A284371FB002E8682 /* Jomnol (Income).app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -122,7 +122,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A2DDCA95284371FB002E8682 /* Build configuration list for PBXProject "BunhongWING" */;
+			buildConfigurationList = A2DDCA95284371FB002E8682 /* Build configuration list for PBXProject "Income Report" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -139,7 +139,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A2DDCA99284371FB002E8682 /* BunhongWING */,
+				A2DDCA99284371FB002E8682 /* Income Report */,
 			);
 		};
 /* End PBXProject section */
@@ -165,7 +165,7 @@
 				A2DDCAB128439366002E8682 /* InputView.swift in Sources */,
 				A2DDCAA0284371FB002E8682 /* ContentView.swift in Sources */,
 				A2DDCAB3284393BF002E8682 /* ReportView.swift in Sources */,
-				A2DDCA9E284371FB002E8682 /* BunhongWINGApp.swift in Sources */,
+				A2DDCA9E284371FB002E8682 /* IncomeReportApp.swift in Sources */,
 				A27799132843B9E8001197F7 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,7 +223,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -277,7 +277,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -292,24 +292,28 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BunhongWING/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Income Report/Preview Content\"";
 				DEVELOPMENT_TEAM = MM23294F8G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = koing.dev.BunhongWING;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "koing.dev.income-report";
+				PRODUCT_NAME = "Jomnol (Income)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -321,24 +325,28 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BunhongWING/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Income Report/Preview Content\"";
 				DEVELOPMENT_TEAM = MM23294F8G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = koing.dev.BunhongWING;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "koing.dev.income-report";
+				PRODUCT_NAME = "Jomnol (Income)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -348,7 +356,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A2DDCA95284371FB002E8682 /* Build configuration list for PBXProject "BunhongWING" */ = {
+		A2DDCA95284371FB002E8682 /* Build configuration list for PBXProject "Income Report" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A2DDCAA6284371FD002E8682 /* Debug */,
@@ -357,7 +365,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A2DDCAA8284371FD002E8682 /* Build configuration list for PBXNativeTarget "BunhongWING" */ = {
+		A2DDCAA8284371FD002E8682 /* Build configuration list for PBXNativeTarget "Income Report" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A2DDCAA9284371FD002E8682 /* Debug */,

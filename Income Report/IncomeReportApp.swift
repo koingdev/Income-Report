@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct BunhongWINGApp: App {
+struct IncomeReportApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

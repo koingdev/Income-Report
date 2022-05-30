@@ -32,7 +32,7 @@ struct ReportView: View {
             
             HStack {
                 Text("សរុប")
-                    .font(.headline)
+                    .font(.title)
                     .foregroundColor(.secondary)
                     .padding()
                 Spacer()
@@ -47,7 +47,7 @@ struct ReportView: View {
                 
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(.ultraThinMaterial)
+            .background(Color.black.opacity(0.2))
         }
         .onAppear {
             sumTotal()

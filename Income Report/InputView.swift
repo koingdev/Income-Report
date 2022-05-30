@@ -25,6 +25,7 @@ struct InputView: View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
                 Text("រៀល")
+                    .frame(maxWidth: 100, alignment: .leading)
                 TextField("៛", text: $rielIncome)
                     .keyboardType(.decimalPad)
                     .textFieldStyle(.roundedBorder)
@@ -32,6 +33,7 @@ struct InputView: View {
             
             HStack {
                 Text("ដុល្លារ")
+                    .frame(maxWidth: 100, alignment: .leading)
                 TextField("$", text: $usdIncome)
                     .keyboardType(.decimalPad)
                     .textFieldStyle(.roundedBorder)
@@ -55,14 +57,17 @@ struct InputView: View {
                 usdIncome = ""
             }, label: {
                 Text("បញ្ចូល")
-                    .frame(maxWidth: .infinity)
+                    .frame(maxWidth: .infinity, maxHeight: 48)
             })
-            .alert("សូមបញ្ចូលទិន្ន័យឲ្យបានត្រឹមត្រូវ។", isPresented: $showingAlert) {
-                Button("OK", role: .cancel) { }
+            .background(Color.green)
+            .foregroundColor(.white)
+            .cornerRadius(12)
+            .alert(isPresented: $showingAlert) {
+                Alert(
+                    title: Text("សូមបញ្ចូលទិន្ន័យឲ្យបានត្រឹមត្រូវ។"),
+                    dismissButton: .cancel(Text("OK"))
+                )
             }
-            .buttonStyle(.bordered)
-            .tint(.green)
-            .controlSize(.large)
         }
         .padding(20)
             
