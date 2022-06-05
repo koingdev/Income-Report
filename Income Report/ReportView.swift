@@ -6,34 +6,38 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ReportView: View {
-    @State private var startDate = Date()
-    @State private var endDate = Date()
+    @State private var startDate = Date().startOfMonth
+    @State private var endDate = Date().endOfMonth
     @State private var rielTotal: Double = 0
     @State private var usdTotal: Double = 0
+    
+    @State private var listReport: Results<IncomeModel> = IncomeModel.filteredAll(from: Date().startOfMonth, to: Date().endOfMonth)
     
     var body: some View {
         VStack(spacing: 12) {
             Spacer()
             DatePicker("ចាប់ពី", selection: $startDate, displayedComponents: .date)
+                .font(.title)
                 .environment(\.locale, .khm)
                 .padding()
                 .onChange(of: startDate) { _ in
-                    sumTotal()
+                    fetchAndSumTotal()
                 }
 
             DatePicker("ដល់", selection: $endDate, displayedComponents: .date)
+                .font(.title)
                 .environment(\.locale, .khm)
                 .padding()
                 .onChange(of: endDate) { _ in
-                    sumTotal()
+                    fetchAndSumTotal()
                 }
             
             HStack {
                 Text("សរុប")
                     .font(.title)
-                    .foregroundColor(.secondary)
                     .padding()
                 Spacer()
                 
@@ -46,19 +50,44 @@ struct ReportView: View {
                 }.padding()
                 
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.black.opacity(0.2))
+            
+            if listReport.isEmpty {
+                Text("គ្មានទិន្នន័យចន្លោះពេលនេះ")
+                    .frame(maxHeight: .infinity)
+            } else {
+                List {
+                    ForEach(listReport) { report in
+                        HStack {
+                            Text(report.date.formattedString)
+                                .font(.title3)
+                            Spacer()
+                            VStack {
+                                Text("\(report.rielIncome, specifier: "%.2f")៛")
+                                    .font(.title2)
+                                Text("\(report.usdIncome, specifier: "%.2f")$")
+                                    .font(.title2)
+                            }
+                        }
+                    }
+                    .onDelete { indexSet in
+                        guard let index = indexSet.first else { return }
+                        listReport[index].delete()
+                        fetchAndSumTotal()
+                    }
+                }
+            }
         }
         .onAppear {
-            sumTotal()
+            fetchAndSumTotal()
         }
     }
     
-    private func sumTotal() {
+    private func fetchAndSumTotal() {
         let start = startDate.startOfDay
         let end = endDate.endOfDay
-        rielTotal = IncomeModel.totalRielIncome(from: start, to: end)
-        usdTotal = IncomeModel.totalUsdIncome(from: start, to: end)
+        listReport = IncomeModel.filteredAll(from: start, to: end)
+        rielTotal = listReport.reduce(0) { $0 + $1.rielIncome }
+        usdTotal = listReport.reduce(0) { $0 + $1.usdIncome }
     }
 }
 

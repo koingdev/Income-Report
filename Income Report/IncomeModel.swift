@@ -8,7 +8,8 @@
 import Foundation
 import RealmSwift
 
-class IncomeModel: Object {
+class IncomeModel: Object, ObjectKeyIdentifiable {
+    @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var rielIncome: Double
     @Persisted var usdIncome: Double
     @Persisted var date: Date
@@ -31,29 +32,25 @@ class IncomeModel: Object {
         }
     }
     
-    static func totalRielIncome(from start: Date, to end: Date) -> Double {
+    func delete() {
         do {
             let realm = try Realm()
-            return realm
-                .objects(IncomeModel.self)
-                .filter("date BETWEEN {%@, %@}", start, end)
-                .reduce(0) { $0 + $1.rielIncome }
+            try realm.write {
+                realm.delete(self)
+            }
         } catch {
-            debugPrint("Failed to read db!")
-            return 0
+            debugPrint("Failed to add to db!")
         }
     }
     
-    static func totalUsdIncome(from start: Date, to end: Date) -> Double {
-        do {
-            let realm = try Realm()
-            return realm
-                .objects(IncomeModel.self)
-                .filter("date BETWEEN {%@, %@}", start, end)
-                .reduce(0) { $0 + $1.usdIncome }
-        } catch {
-            debugPrint("Failed to read db!")
-            return 0
-        }
+    static func all() -> Results<IncomeModel> {
+        let realm = try! Realm()
+        return realm.objects(IncomeModel.self)
+    }
+    
+    static func filteredAll(from start: Date, to end: Date) -> Results<IncomeModel> {
+        return all()
+            .filter("date BETWEEN {%@, %@}", start, end)
+            .sorted(by: \.date, ascending: false)
     }
 }

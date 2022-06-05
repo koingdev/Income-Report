@@ -25,21 +25,26 @@ struct InputView: View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
                 Text("រៀល")
+                    .font(.title)
                     .frame(maxWidth: 100, alignment: .leading)
                 TextField("៛", text: $rielIncome)
+                    .font(.title)
                     .keyboardType(.decimalPad)
                     .textFieldStyle(.roundedBorder)
             }.padding()
             
             HStack {
                 Text("ដុល្លារ")
+                    .font(.title)
                     .frame(maxWidth: 100, alignment: .leading)
                 TextField("$", text: $usdIncome)
+                    .font(.title)
                     .keyboardType(.decimalPad)
                     .textFieldStyle(.roundedBorder)
             }.padding()
             
             DatePicker("📅", selection: $date, displayedComponents: .date)
+                .font(.title)
                 .environment(\.locale, .khm)
                 .padding()
                 .onTapGesture {
@@ -57,7 +62,8 @@ struct InputView: View {
                 usdIncome = ""
             }, label: {
                 Text("បញ្ចូល")
-                    .frame(maxWidth: .infinity, maxHeight: 48)
+                    .font(.title)
+                    .frame(maxWidth: .infinity, maxHeight: 54)
             })
             .background(Color.green)
             .foregroundColor(.white)
