@@ -29,7 +29,7 @@ struct InputView: View {
                     .frame(maxWidth: 100, alignment: .leading)
                 TextField("៛", text: $rielIncome)
                     .font(.title)
-                    .keyboardType(.decimalPad)
+                    .keyboardType(.numbersAndPunctuation)
                     .textFieldStyle(.roundedBorder)
             }.padding()
             
@@ -39,7 +39,7 @@ struct InputView: View {
                     .frame(maxWidth: 100, alignment: .leading)
                 TextField("$", text: $usdIncome)
                     .font(.title)
-                    .keyboardType(.decimalPad)
+                    .keyboardType(.numbersAndPunctuation)
                     .textFieldStyle(.roundedBorder)
             }.padding()
             

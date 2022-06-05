@@ -42,9 +42,9 @@ struct ReportView: View {
                 Spacer()
                 
                 VStack {
-                    Text("\(rielTotal, specifier: "%.2f")៛")
+                    Text("\(rielTotal.stringWithoutZeroFraction)៛")
                         .font(.largeTitle.bold())
-                    Text("\(usdTotal, specifier: "%.2f")$")
+                    Text("\(usdTotal.stringWithoutZeroFraction)$")
                         .font(.largeTitle.bold())
                         
                 }.padding()
@@ -61,10 +61,10 @@ struct ReportView: View {
                             Text(report.date.formattedString)
                                 .font(.title3)
                             Spacer()
-                            VStack {
-                                Text("\(report.rielIncome, specifier: "%.2f")៛")
+                            VStack(alignment: .trailing) {
+                                Text("\(report.rielIncome.stringWithoutZeroFraction)៛")
                                     .font(.title2)
-                                Text("\(report.usdIncome, specifier: "%.2f")$")
+                                     Text("\(report.usdIncome.stringWithoutZeroFraction)$")
                                     .font(.title2)
                             }
                         }
