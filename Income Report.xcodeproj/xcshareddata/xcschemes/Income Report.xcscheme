@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A2DDCA99284371FB002E8682"
-               BuildableName = "Income Report.app"
+               BuildableName = "Jomnol (Income).app"
                BlueprintName = "Income Report"
                ReferencedContainer = "container:Income Report.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A2DDCA99284371FB002E8682"
-            BuildableName = "Income Report.app"
+            BuildableName = "Jomnol (Income).app"
             BlueprintName = "Income Report"
             ReferencedContainer = "container:Income Report.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A2DDCA99284371FB002E8682"
-            BuildableName = "Income Report.app"
+            BuildableName = "Jomnol (Income).app"
             BlueprintName = "Income Report"
             ReferencedContainer = "container:Income Report.xcodeproj">
          </BuildableReference>
