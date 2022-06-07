@@ -56,7 +56,7 @@ struct ReportView: View {
                     .frame(maxHeight: .infinity)
             } else {
                 List {
-                    ForEach(listReport) { report in
+                    ForEach(listReport.freeze()) { report in
                         HStack {
                             Text(report.date.formattedString)
                                 .font(.title3)
