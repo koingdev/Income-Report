@@ -41,7 +41,7 @@ struct ReportView: View {
                     .padding()
                 Spacer()
                 
-                VStack {
+                VStack(alignment: .trailing) {
                     Text("\(rielTotal.stringWithoutZeroFraction)៛")
                         .font(.largeTitle.bold())
                     Text("\(usdTotal.stringWithoutZeroFraction)$")
