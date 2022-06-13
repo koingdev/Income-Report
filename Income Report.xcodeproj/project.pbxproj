@@ -81,6 +81,16 @@
 			path = Report;
 			sourceTree = "<group>";
 		};
+		A29D03A02857ABC2008A9F78 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A29D0399285769A6008A9F78 /* Authentication.swift */,
+				A29D039B285781C1008A9F78 /* CoreDataCloudKitService.swift */,
+				A27799122843B9E8001197F7 /* Helper.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		A2DDCA91284371FB002E8682 = {
 			isa = PBXGroup;
 			children = (
@@ -105,9 +115,7 @@
 				A23CBB652850DABE0003A183 /* Income Report.entitlements */,
 				A2DDCA9D284371FB002E8682 /* IncomeReportApp.swift */,
 				A2DDCA9F284371FB002E8682 /* ContentView.swift */,
-				A27799122843B9E8001197F7 /* Helper.swift */,
-				A29D0399285769A6008A9F78 /* Authentication.swift */,
-				A29D039B285781C1008A9F78 /* CoreDataCloudKitService.swift */,
+				A29D03A02857ABC2008A9F78 /* Utilities */,
 				A23CBB6B2850DEA10003A183 /* Input */,
 				A23CBB6E2850E0D10003A183 /* Report */,
 				A2DDCAA1284371FD002E8682 /* Assets.xcassets */,
