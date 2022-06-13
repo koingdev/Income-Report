@@ -14,6 +14,7 @@
 		A277990F2843AF2B001197F7 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A277990E2843AF2B001197F7 /* Realm */; };
 		A27799112843AF2B001197F7 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A27799102843AF2B001197F7 /* RealmSwift */; };
 		A27799132843B9E8001197F7 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27799122843B9E8001197F7 /* Helper.swift */; };
+		A29D039A285769A6008A9F78 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D0399285769A6008A9F78 /* Authentication.swift */; };
 		A2DDCA9E284371FB002E8682 /* IncomeReportApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DDCA9D284371FB002E8682 /* IncomeReportApp.swift */; };
 		A2DDCAA0284371FB002E8682 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DDCA9F284371FB002E8682 /* ContentView.swift */; };
 		A2DDCAA2284371FD002E8682 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2DDCAA1284371FD002E8682 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		A23CBB6C2850E0930003A183 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		A23CBB6F2850E1D60003A183 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
 		A27799122843B9E8001197F7 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		A29D0399285769A6008A9F78 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		A2DDCA9A284371FB002E8682 /* Jomnol (Income).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jomnol (Income).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2DDCA9D284371FB002E8682 /* IncomeReportApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeReportApp.swift; sourceTree = "<group>"; };
 		A2DDCA9F284371FB002E8682 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				A2DDCA9D284371FB002E8682 /* IncomeReportApp.swift */,
 				A2DDCA9F284371FB002E8682 /* ContentView.swift */,
 				A27799122843B9E8001197F7 /* Helper.swift */,
+				A29D0399285769A6008A9F78 /* Authentication.swift */,
 				A23CBB6B2850DEA10003A183 /* Input */,
 				A23CBB6E2850E0D10003A183 /* Report */,
 				A2DDCAA1284371FD002E8682 /* Assets.xcassets */,
@@ -203,6 +206,7 @@
 				A23CBB702850E1D60003A183 /* ReportViewModel.swift in Sources */,
 				A23CBB6D2850E0930003A183 /* InputTextField.swift in Sources */,
 				A2DDCAAC28438DC5002E8682 /* IncomeModel.swift in Sources */,
+				A29D039A285769A6008A9F78 /* Authentication.swift in Sources */,
 				A2DDCAB128439366002E8682 /* InputView.swift in Sources */,
 				A2DDCAA0284371FB002E8682 /* ContentView.swift in Sources */,
 				A2DDCAB3284393BF002E8682 /* ReportView.swift in Sources */,
@@ -342,6 +346,7 @@
 				DEVELOPMENT_TEAM = MM23294F8G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "$(PRODUCT_NAME) Authentication with TouchID or FaceID";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -376,6 +381,7 @@
 				DEVELOPMENT_TEAM = MM23294F8G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "$(PRODUCT_NAME) Authentication with TouchID or FaceID";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

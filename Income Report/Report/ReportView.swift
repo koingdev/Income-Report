@@ -18,7 +18,7 @@ struct ReportView: View {
                 .environment(\.locale, .khm)
                 .padding()
                 .onChange(of: viewModel.startDate) { _ in
-                    viewModel.fetchAndSumTotal()
+                    viewModel.fetchAndSumTotalIfUnlocked()
                 }
 
             DatePicker("ដល់", selection: $viewModel.endDate, displayedComponents: .date)
@@ -26,7 +26,7 @@ struct ReportView: View {
                 .environment(\.locale, .khm)
                 .padding()
                 .onChange(of: viewModel.endDate) { _ in
-                    viewModel.fetchAndSumTotal()
+                    viewModel.fetchAndSumTotalIfUnlocked()
                 }
             
             HStack {
@@ -66,13 +66,13 @@ struct ReportView: View {
                     .onDelete { indexSet in
                         guard let index = indexSet.first else { return }
                         viewModel.listReport[index].delete()
-                        viewModel.fetchAndSumTotal()
+                        viewModel.fetchAndSumTotalIfUnlocked()
                     }
                 }
             }
         }
         .onAppear {
-            viewModel.fetchAndSumTotal()
+            viewModel.fetchAndSumTotalIfUnlocked()
         }
     }
 }

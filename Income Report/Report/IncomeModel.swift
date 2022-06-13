@@ -53,4 +53,8 @@ class IncomeModel: Object, ObjectKeyIdentifiable {
             .filter("date BETWEEN {%@, %@}", start, end)
             .sorted(by: \.date, ascending: false)
     }
+    
+    static func empty() -> Results<IncomeModel> {
+        return all().filter(NSPredicate(value: false))
+    }
 }

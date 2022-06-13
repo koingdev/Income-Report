@@ -13,13 +13,27 @@ final class ReportViewModel: ObservableObject {
     @Published var endDate = Date().endOfMonth
     @Published var rielTotal: Double = 0
     @Published var usdTotal: Double = 0
-    @Published var listReport: Results<IncomeModel> = IncomeModel.filteredAll(from: Date().startOfMonth, to: Date().endOfMonth)
+    @Published var listReport: Results<IncomeModel> = IncomeModel.empty()
+    @Published var isUnlocked = false
     
-    func fetchAndSumTotal() {
+    private func fetchAndSumTotal() {
         let start = startDate.startOfDay
         let end = endDate.endOfDay
         listReport = IncomeModel.filteredAll(from: start, to: end)
         rielTotal = listReport.reduce(0) { $0 + $1.rielIncome }
         usdTotal = listReport.reduce(0) { $0 + $1.usdIncome }
+    }
+    
+    func fetchAndSumTotalIfUnlocked() {
+        if isUnlocked {
+            fetchAndSumTotal()
+        } else {
+            Task { @MainActor in
+                isUnlocked = await Authentication.start()
+                if isUnlocked {
+                    fetchAndSumTotal()
+                }
+            }
+        }
     }
 }
