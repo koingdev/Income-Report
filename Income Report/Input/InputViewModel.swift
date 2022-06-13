@@ -26,7 +26,7 @@ final class InputViewModel: ObservableObject {
         // validate
         guard isValid() else { showingAlert = true; return }
         // add to db
-        IncomeModel(rielIncome: rielValue, usdIncome: usdValue, date: date).add()
+        CoreDataCloudKitService.save(rielIncome: rielValue, usdIncome: usdValue, date: date)
         // reset
         rielIncome = ""
         usdIncome = ""

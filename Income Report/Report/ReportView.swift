@@ -45,27 +45,28 @@ struct ReportView: View {
                 
             }
             
-            if viewModel.listReport.isEmpty {
+            if viewModel.incomes.isEmpty {
                 Text("គ្មានទិន្នន័យចន្លោះពេលនេះ")
+                    .font(.title3)
                     .frame(maxHeight: .infinity)
             } else {
                 List {
-                    ForEach(viewModel.listReport.freeze()) { report in
+                    ForEach(viewModel.incomes) { income in
                         HStack {
-                            Text(report.date.formattedString)
+                            Text(income.date?.formattedString ?? "")
                                 .font(.title3)
                             Spacer()
                             VStack(alignment: .trailing) {
-                                Text("\(report.rielIncome.stringWithoutZeroFraction)៛")
+                                Text("\(income.rielIncome.stringWithoutZeroFraction)៛")
                                     .font(.title2)
-                                     Text("\(report.usdIncome.stringWithoutZeroFraction)$")
+                                     Text("\(income.usdIncome.stringWithoutZeroFraction)$")
                                     .font(.title2)
                             }
                         }
                     }
                     .onDelete { indexSet in
                         guard let index = indexSet.first else { return }
-                        viewModel.listReport[index].delete()
+                        CoreDataCloudKitService.delete(income: viewModel.incomes[index])
                         viewModel.fetchAndSumTotalIfUnlocked()
                     }
                 }
