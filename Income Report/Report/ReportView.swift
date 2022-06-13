@@ -14,7 +14,7 @@ struct ReportView: View {
         VStack(spacing: 12) {
             Spacer()
             DatePicker("ចាប់ពី", selection: $viewModel.startDate, displayedComponents: .date)
-                .font(.title)
+                .font(.title3)
                 .environment(\.locale, .khm)
                 .padding()
                 .onChange(of: viewModel.startDate) { _ in
@@ -22,7 +22,7 @@ struct ReportView: View {
                 }
 
             DatePicker("ដល់", selection: $viewModel.endDate, displayedComponents: .date)
-                .font(.title)
+                .font(.title3)
                 .environment(\.locale, .khm)
                 .padding()
                 .onChange(of: viewModel.endDate) { _ in

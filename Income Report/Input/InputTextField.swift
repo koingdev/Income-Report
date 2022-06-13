@@ -15,10 +15,10 @@ struct InputTextField: View {
     var body: some View {
         HStack {
             Text(title)
-                .font(.title)
+                .font(.title3)
                 .frame(maxWidth: 100, alignment: .leading)
             TextField(placeholder, text: $text)
-                .font(.title)
+                .font(.title3)
                 .keyboardType(.numbersAndPunctuation)
                 .textFieldStyle(.roundedBorder)
         }.padding()

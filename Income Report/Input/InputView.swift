@@ -16,7 +16,7 @@ struct InputView: View {
             InputTextField(title: "ដុល្លារ", placeholder: "$", text: $viewModel.usdIncome)
             
             DatePicker("📅", selection: $viewModel.date, displayedComponents: .date)
-                .font(.title)
+                .font(.title3)
                 .environment(\.locale, .khm)
                 .padding()
                 .onTapGesture {
@@ -28,7 +28,7 @@ struct InputView: View {
                 viewModel.submit()
             }, label: {
                 Text("បញ្ចូល")
-                    .font(.title)
+                    .font(.title3)
                     .frame(maxWidth: .infinity, maxHeight: 54)
             })
             .background(Color.green)
