@@ -1,5 +1,5 @@
 # Income-Report
-An offline first app to track your income.
+An offline-first app to track your income.
 
 - Use FaceID / TouchID to unlock your report
 - CoreData + CloudKit sync
