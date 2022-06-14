@@ -66,7 +66,7 @@ struct ReportView: View {
                     }
                     .onDelete { indexSet in
                         guard let index = indexSet.first else { return }
-                        CoreDataCloudKitService.delete(income: viewModel.incomes[index])
+                        PersistenceController.delete(viewModel.incomes[index])
                         viewModel.fetchAndSumTotalIfUnlocked()
                     }
                 }

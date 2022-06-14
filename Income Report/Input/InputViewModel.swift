@@ -14,10 +14,10 @@ final class InputViewModel: ObservableObject {
     @Published var date = Date()
     @Published var showingAlert = false
     
-    var rielValue: Double { Double(rielIncome) ?? 0 }
-    var usdValue: Double { Double(usdIncome) ?? 0 }
+    private var rielValue: Double { Double(rielIncome) ?? 0 }
+    private var usdValue: Double { Double(usdIncome) ?? 0 }
     
-    func isValid() -> Bool {
+    private func isValid() -> Bool {
         if rielValue <= 0 && usdValue <= 0 { return false }
         return true
     }
@@ -26,7 +26,12 @@ final class InputViewModel: ObservableObject {
         // validate
         guard isValid() else { showingAlert = true; return }
         // add to db
-        CoreDataCloudKitService.save(rielIncome: rielValue, usdIncome: usdValue, date: date)
+        let income = Income(context: PersistenceController.viewContext)
+        income.id = UUID()
+        income.rielIncome = rielValue
+        income.usdIncome = usdValue
+        income.date = date
+        PersistenceController.save()
         // reset
         rielIncome = ""
         usdIncome = ""

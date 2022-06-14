@@ -14,14 +14,14 @@ final class ReportViewModel: ObservableObject {
     @Published var usdTotal: Double = 0
     @Published var isUnlocked = false
     @Published var incomes: [Income] = []
-    private var fetchRequest = Income.fetchRequest()
     
     private func fetchAndSumTotal() {
         let start = startDate.startOfDay
         let end = endDate.endOfDay
+        let fetchRequest = Income.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Income.date, ascending: false)]
         fetchRequest.predicate = NSPredicate(format: "date >= %@ AND date <= %@", start as CVarArg, end as CVarArg)
-        incomes = CoreDataCloudKitService.fetch(fetchRequest)
+        incomes = PersistenceController.fetch(fetchRequest)
         rielTotal = incomes.reduce(0) { $0 + $1.rielIncome }
         usdTotal = incomes.reduce(0) { $0 + $1.usdIncome }
     }

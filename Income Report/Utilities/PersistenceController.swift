@@ -7,14 +7,16 @@
 
 import CoreData
 
-struct CoreDataCloudKitService {
+let containerName = "IncomeCoreDataModel"
+
+struct PersistenceController {
     
-    static let shared = CoreDataCloudKitService()
+    static let shared = PersistenceController()
     
     private init() { }
 
     private let container: NSPersistentCloudKitContainer = {
-        let container = NSPersistentCloudKitContainer(name: "IncomeCoreDataModel")
+        let container = NSPersistentCloudKitContainer(name: containerName)
         container.viewContext.automaticallyMergesChangesFromParent = true
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -35,43 +37,31 @@ struct CoreDataCloudKitService {
     
     static var viewContext: NSManagedObjectContext { shared.container.viewContext }
 
-    static func fetch(_ request: NSFetchRequest<Income>) -> [Income] {
-        do {
-            let result = try viewContext.fetch(request)
-            return result
-        } catch let error {
-            debugPrint("Error: \(error)")
-            return []
-        }
-    }
-
     @discardableResult
-    static func save(rielIncome: Double, usdIncome: Double, date: Date) -> Bool {
-        let income = Income(context: viewContext)
-        income.id = UUID()
-        income.rielIncome = rielIncome
-        income.usdIncome = usdIncome
-        income.date = date
-
-        do {
-            try viewContext.save()
-            return true
-        } catch {
-            debugPrint("Error: \(error)")
-            return false
+    static func save() -> Bool {
+        if viewContext.hasChanges {
+            do {
+                try viewContext.save()
+                return true
+            } catch {
+                debugPrint("Error: \(error)")
+            }
         }
+        return false
     }
     
     @discardableResult
-    static func delete(income: Income) -> Bool {
-        viewContext.delete(income)
-        
+    static func delete(_ object: NSManagedObject) -> Bool {
+        viewContext.delete(object)
+        return save()
+    }
+    
+    static func fetch<T>(_ request: NSFetchRequest<T>) -> [T] where T : NSFetchRequestResult {
         do {
-            try viewContext.save()
-            return true
+            return try viewContext.fetch(request)
         } catch {
             debugPrint("Error: \(error)")
-            return false
+            return []
         }
     }
 }
