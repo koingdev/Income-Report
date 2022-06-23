@@ -1,5 +1,6 @@
 # Income-Report
 An offline-first app to track your income.
+
 Features:
 - Save / delete daily income
 - Filter report by dates
